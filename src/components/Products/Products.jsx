@@ -1,6 +1,7 @@
 import "./Products.css";
 
 const Products = ({ data }) => {
+  // console.log(data);
   return (
     <div className="products">
       <div className="products-list">
