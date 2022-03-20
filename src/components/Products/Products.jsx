@@ -1,7 +1,6 @@
 import "./Products.css";
 
 const Products = ({ data }) => {
-  // console.log(data);
   return (
     <div className="products">
       <div className="products-list">
@@ -13,7 +12,9 @@ const Products = ({ data }) => {
               {product.name}
             </div>
             <div className="pdt-price">₹{product.price}</div>
-            <div className="pdt-size">Size {product.size.join(",")}</div>
+            <div className="pdt-size">
+              <span>Size</span> {product.size.join(",")}
+            </div>
           </div>
         ))}
       </div>

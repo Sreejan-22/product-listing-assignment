@@ -11,16 +11,35 @@
 
 .pdt-img {
   width: 100%;
-  height: 250px;
+  height: 270px;
   object-fit: cover;
 }
 
-/* .pdt-brand {
-} */
+.pdt-brand {
+  color: #878787;
+  font-weight: 600;
+}
 
 .pdt-name {
   width: calc(95%);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.pdt-price {
+  font-weight: 600;
+}
+
+.pdt-size {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.pdt-size > span {
+  color: #878787;
+  margin-right: 2px;
 }

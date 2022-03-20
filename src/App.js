@@ -21,16 +21,6 @@ function App() {
     setData(dataRef.current);
   };
 
-  // const sortLowToHigh = (inputData) => {
-  //   const temp = [...inputData];
-  //   setData(temp.sort((a, b) => a.price - b.price));
-  // };
-
-  // const sortHightoLow = (inputData) => {
-  //   const temp = [...inputData];
-  //   setData(temp.sort((a, b) => b.price - a.price));
-  // };
-
   const sortFunc = (inputData) => {
     const temp = [...inputData];
     if (sort === "l2h") {
@@ -48,23 +38,17 @@ function App() {
   useEffect(() => {
     let temp = dataRef.current;
     if (currSize.length > 0) {
-      // temp = temp.filter((item) => currSize.some((size) => ));
-      // let temp2 = [];
-      // currSize.forEach((size) => {
-      //   for (let i = 0; i < temp.length; i++) {
-      //     if (temp[i].size.includes(size)) {
-      //       temp2.push(temp);
-      //       break;
-      //     }
-      //   }
-      // });
-      // // remove duplicates
-      // temp2 = temp2.filter(
-      //   (value, index, self) =>
-      //     index === self.findIndex((t) => t.id === value.id)
-      // );
-      // console.log(temp2);
-      // temp = temp2;
+      let temp2 = [];
+      // iterate through temp; include only if temp.size and currSize have items in common
+      temp.forEach((item) => {
+        const intersectionArr = item.size.filter((value) =>
+          currSize.includes(value)
+        );
+        if (intersectionArr.length > 0) {
+          temp2.push(item);
+        }
+      });
+      temp = temp2;
     }
 
     if (currBrand.length > 0) {
