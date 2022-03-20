@@ -1,12 +1,11 @@
 import { Fragment } from "react";
 import "./Filters.css";
 
-const sortBy = ["Low to High", "High to Low"];
 const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 const brands = ["Eyebogler", "Tokyo Talkies", "HRX", "BEING REAL"];
 const genders = ["Female", "Male"];
 
-const Filters = () => {
+const Filters = ({ clearFilters, sort, setSort }) => {
   return (
     <div className="filters">
       <div className="filters-header">
@@ -17,18 +16,26 @@ const Filters = () => {
         <div className="sort">
           <h4 className="filter-name">Sort By</h4>
           <form name="sortBy">
-            {sortBy.map((item, index) => (
-              <Fragment key={index}>
-                <input
-                  type="radio"
-                  id={`sort-by-${index}`}
-                  name={item}
-                  value={item}
-                />
-                <label for={`sort-by-${index}`}> {item}</label>
-                <br />
-              </Fragment>
-            ))}
+            <input
+              type="radio"
+              id="l2h"
+              name="low to high"
+              value="l2h"
+              checked={sort === "l2h"}
+              onChange={(e) => setSort(e.target.value)}
+            />
+            <label for="l2h"> Low to High</label>
+            <br />
+            <input
+              type="radio"
+              id="h2l"
+              name="high to low"
+              value="h2l"
+              checked={sort === "h2l"}
+              onChange={(e) => setSort(e.target.value)}
+            />
+            <label for="h2l"> High to Low</label>
+            <br />
           </form>
         </div>
         <div className="size">
@@ -75,7 +82,7 @@ const Filters = () => {
             <br />
           </form>
         </div>
-        <button>Clear Filters</button>
+        <button onClick={clearFilters}>Clear Filters</button>
       </div>
     </div>
   );
