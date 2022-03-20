@@ -1,8 +1,8 @@
 import Logo from "../Logo/Logo";
-import Search from "../Search/Search";
-import Button from "@mui/material/Button";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import Search from "../Search/Search";
+// import Button from "@mui/material/Button";
+// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="nav-logo">
           <Logo />
         </div>
-        <div className="nav-search">
+        {/* <div className="nav-search">
           <Search />
         </div>
         <div className="nav-login">
@@ -43,7 +43,7 @@ const Navbar = () => {
           <span>
             <ShoppingCartIcon /> Cart
           </span>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
