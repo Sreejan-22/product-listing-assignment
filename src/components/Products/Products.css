@@ -11,8 +11,8 @@
 
 .pdt-img {
   width: 100%;
-  height: 270px;
-  object-fit: cover;
+  height: 280px;
+  /* object-fit: cover; */
 }
 
 .pdt-brand {
